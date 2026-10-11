@@ -1,56 +1,26 @@
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem;
-}
-
-.primary,
-.secondary {
-  min-height: 2.75rem;
-  padding: 0.75rem 1.25rem;
-  border: 1px solid var(--brand-ink);
-  border-radius: var(--radius-none);
-  font-family: var(--font-body-family);
-  font-size: var(--text-button);
-  font-weight: var(--weight-body);
-  letter-spacing: var(--tracking-button);
+.button {
+  min-height: 2.4rem;
+  padding: 0.6rem 1.1rem;
+  border: 1px solid var(--ink);
+  border-radius: var(--radius);
+  background: var(--ink);
+  color: #fff;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  line-height: 1.3;
   cursor: pointer;
-  transition:
-    background-color var(--duration) var(--ease),
-    color var(--duration) var(--ease),
-    border-color var(--duration) var(--ease),
-    transform var(--duration) var(--ease);
+  transition: background 0.25s var(--ease), transform 0.2s var(--ease);
 }
 
-.primary {
-  background: var(--brand-ink);
-  color: var(--brand-bg);
+.button:hover {
+  background: #222;
 }
 
-.secondary {
-  background: transparent;
-  color: var(--brand-ink);
-}
-
-.primary:hover {
-  background: #222222;
-  border-color: #222222;
-}
-
-.secondary:hover {
-  background: var(--brand-ink);
-  color: var(--brand-bg);
-}
-
-.primary:active,
-.secondary:active {
+.button:active {
   transform: translateY(1px);
 }
 
-.primary:focus-visible,
-.secondary:focus-visible {
-  outline: 2px solid var(--brand-ink);
-  outline-offset: 3px;
+.button:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
 }

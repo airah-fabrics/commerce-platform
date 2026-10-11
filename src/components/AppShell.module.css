@@ -1,13 +1,11 @@
 .shell {
-  --sidebar-width: 272px;
   min-height: 100vh;
   display: grid;
   grid-template-columns: var(--sidebar-width) 1fr;
-  background: var(--brand-surface);
-  color: var(--brand-ink);
+  background: var(--bg);
 }
 
-.mobileBar {
+.topMobile {
   display: none;
 }
 
@@ -21,225 +19,167 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: 1.35rem;
-  padding: 1.4rem 1rem 1.1rem;
-  background: var(--brand-sidebar);
-  color: var(--brand-sidebar-text);
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--sidebar);
+  color: var(--sidebar-ink);
+  border-right: 1px solid var(--line);
   z-index: 30;
 }
 
-.sidebarHeader {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 0.75rem;
-  padding: 0 0.25rem;
-}
-
-.brand,
-.mobileBrand {
+.brand {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  min-width: 0;
+  padding: 1.25rem 1.1rem 1rem;
+  border-bottom: 1px solid var(--line);
 }
 
 .brandMark {
-  flex: 0 0 auto;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2rem;
+  height: 2rem;
   object-fit: contain;
-  background: #ffffff;
+  background: #fff;
+  border: 1px solid var(--line);
 }
 
 .brandName {
   margin: 0;
   font-family: var(--font-heading-family);
-  font-size: 1.35rem;
-  font-weight: var(--weight-heading);
-  letter-spacing: 0.01em;
-  line-height: 1.15;
+  font-size: 1.05rem;
+  line-height: 1.2;
 }
 
-.brandSub {
-  margin: 0.28rem 0 0;
-  font-family: var(--font-body-family);
-  font-size: var(--text-eyebrow);
-  font-weight: var(--weight-strong);
-  letter-spacing: var(--tracking-eyebrow);
-  text-transform: uppercase;
-  opacity: 0.72;
+.brandProduct {
+  margin: 0.15rem 0 0;
+  font-size: 0.75rem;
+  color: var(--muted);
 }
 
 .nav {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
   flex: 1;
   overflow: auto;
+  padding: 1rem 0.75rem 1.25rem;
 }
 
-.navLink {
-  display: grid;
-  grid-template-columns: 1.35rem 1fr auto;
-  align-items: center;
-  gap: 0.75rem;
-  min-height: 2.6rem;
-  padding: 0.55rem 0.7rem;
-  color: inherit;
-  text-decoration: none;
-  border-left: 2px solid transparent;
-  transition:
-    background-color var(--duration) var(--ease),
-    border-color var(--duration) var(--ease),
-    transform var(--duration) var(--ease);
+.group + .group {
+  margin-top: 1.15rem;
 }
 
-.navLink:hover,
-.navLink:focus-visible {
-  background: rgba(255, 255, 255, 0.08);
-  outline: none;
-}
-
-.navLinkActive {
-  background: rgba(255, 255, 255, 0.12);
-  border-left-color: #ffffff;
-}
-
-.navIcon {
-  display: inline-flex;
-  transition: transform var(--duration) var(--ease);
-}
-
-.navLink:hover .navIcon {
-  transform: translateX(1px);
-}
-
-.navLabel {
-  font-family: var(--font-body-family);
-  font-size: var(--text-eyebrow);
-  font-weight: var(--weight-strong);
-  letter-spacing: 0.1em;
+.groupLabel {
+  margin: 0 0 0.4rem 0.55rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: var(--muted);
 }
 
-.navBadge {
-  display: inline-flex;
-}
-
-.sidebarFooter {
-  margin-top: auto;
-  padding-top: 0.5rem;
-}
-
-.connectionCard {
-  display: flex;
-  gap: 0.7rem;
-  align-items: flex-start;
-  padding: 0.85rem 0.8rem;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(255, 255, 255, 0.04);
-}
-
-.connectionDot {
-  width: 0.55rem;
-  height: 0.55rem;
-  margin-top: 0.3rem;
-  border-radius: 999px;
-  background: #c4a574;
-}
-
-.connectionTitle {
+.list {
+  list-style: none;
   margin: 0;
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  opacity: 0.7;
+  padding: 0;
+  display: grid;
+  gap: 0.15rem;
 }
 
-.connectionText {
-  margin: 0.2rem 0 0;
-  font-size: 0.875rem;
-  font-weight: var(--weight-strong);
+.link {
+  display: grid;
+  grid-template-columns: 1.1rem 1fr auto;
+  align-items: center;
+  gap: 0.7rem;
+  min-height: 2.35rem;
+  padding: 0.45rem 0.65rem;
+  text-decoration: none;
+  color: var(--sidebar-ink);
+  border: 1px solid transparent;
+  transition: background 0.2s var(--ease), border-color 0.2s var(--ease);
 }
 
-.content {
+.link:hover {
+  background: var(--accent-soft);
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.active {
+  background: var(--accent-soft);
+  border-color: var(--line);
+  font-weight: 500;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.1rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: var(--warning);
+}
+
+.workspace {
   min-width: 0;
   display: flex;
   flex-direction: column;
 }
 
-.desktopTop {
+.topDesktop {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1rem 2rem;
-  border-bottom: 1px solid var(--brand-line);
-  background: rgba(255, 255, 255, 0.78);
-  backdrop-filter: blur(8px);
+  min-height: 3.25rem;
+  padding: 0 1.75rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
   position: sticky;
   top: 0;
   z-index: 10;
 }
 
-.desktopEyebrow {
+.topHint,
+.topStatus {
   margin: 0;
-  font-size: var(--text-eyebrow);
-  letter-spacing: var(--tracking-eyebrow);
-  text-transform: uppercase;
-  color: var(--brand-muted);
-  font-weight: var(--weight-strong);
+  font-size: 0.8rem;
+  color: var(--muted);
 }
 
-.statusChip {
-  display: inline-flex;
-  align-items: center;
-  min-height: 1.7rem;
-  padding: 0.2rem 0.55rem;
-  border: 1px solid currentColor;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  white-space: nowrap;
+.topStatus {
+  font-weight: 500;
 }
 
 .main {
-  padding: 1.5rem 2rem 2.5rem;
-  animation: rise 0.35s var(--ease);
+  padding: 1.5rem 1.75rem 2.5rem;
+  max-width: 1120px;
+  width: 100%;
 }
 
-.iconButton {
+.menuBtn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.4rem;
-  height: 2.4rem;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  background: transparent;
-  color: inherit;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--line);
+  background: var(--surface);
   cursor: pointer;
-  transition: background-color var(--duration) var(--ease);
 }
 
-.iconButton:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.closeDesktopHidden {
-  display: none;
-}
-
-@keyframes rise {
-  from {
-    opacity: 0;
-    transform: translateY(0.35rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.mobileTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-heading-family);
+  font-size: 1rem;
 }
 
 @media (max-width: 900px) {
@@ -247,35 +187,20 @@
     grid-template-columns: 1fr;
   }
 
-  .mobileBar {
+  .topMobile {
     position: sticky;
     top: 0;
     z-index: 40;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
+    display: flex;
     align-items: center;
     gap: 0.75rem;
-    padding: 0.75rem 0.9rem;
-    background: var(--brand-sidebar);
-    color: var(--brand-sidebar-text);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    min-height: 3.25rem;
+    padding: 0.55rem 0.85rem;
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
   }
 
-  .mobileBrand .brandMark {
-    width: 1.75rem;
-    height: 1.75rem;
-  }
-
-  .mobileBrand .brandName {
-    font-size: 1.05rem;
-  }
-
-  .mobileBrand .brandSub {
-    margin-top: 0.1rem;
-    font-size: 0.65rem;
-  }
-
-  .desktopTop {
+  .topDesktop {
     display: none;
   }
 
@@ -283,15 +208,15 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: min(20rem, 88vw);
-    height: 100vh;
+    width: min(18.5rem, 88vw);
     transform: translateX(-105%);
-    transition: transform 0.35s var(--ease);
+    transition: transform 0.3s var(--ease);
+    box-shadow: none;
   }
 
-  .navOpen .sidebar {
+  .open .sidebar {
     transform: translateX(0);
-    box-shadow: 12px 0 40px rgba(0, 0, 0, 0.28);
+    box-shadow: 8px 0 28px rgba(0, 0, 0, 0.12);
   }
 
   .backdrop {
@@ -299,20 +224,12 @@
     position: fixed;
     inset: 0;
     z-index: 25;
-    background: rgba(0, 0, 0, 0.45);
-    animation: fade 0.25s var(--ease);
-  }
-
-  .closeDesktopHidden {
-    display: inline-flex;
+    border: 0;
+    background: rgba(0, 0, 0, 0.35);
+    cursor: pointer;
   }
 
   .main {
     padding: 1.15rem 1rem 2rem;
   }
-}
-
-@keyframes fade {
-  from { opacity: 0; }
-  to { opacity: 1; }
 }

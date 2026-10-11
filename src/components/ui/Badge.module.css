@@ -2,27 +2,26 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 1.35rem;
-  height: 1.25rem;
-  padding: 0 0.4rem;
+  min-width: 1.25rem;
+  height: 1.15rem;
+  padding: 0 0.35rem;
   border-radius: 999px;
   font-size: 0.68rem;
-  font-weight: 700;
+  font-weight: 650;
   line-height: 1;
-  letter-spacing: 0.02em;
 }
 
 .neutral {
-  background: rgba(255, 255, 255, 0.14);
-  color: inherit;
+  background: var(--line);
+  color: var(--ink);
 }
 
 .accent {
-  background: #ffffff;
-  color: #000000;
+  background: var(--ink);
+  color: #fff;
 }
 
 .warning {
-  background: #c4a574;
-  color: #000000;
+  background: #fef0c7;
+  color: var(--warning);
 }
