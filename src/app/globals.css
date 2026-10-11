@@ -1,6 +1,6 @@
 :root {
   --brand-bg: #ffffff;
-  --brand-surface: #ece8e2;
+  --brand-surface: #f5f3ef;
   --brand-ink: #000000;
   --brand-muted: #5c5c5c;
   --brand-line: #d9d4cc;
@@ -9,6 +9,22 @@
   --brand-accent: #000000;
   --font-heading-family: var(--font-heading), "Times New Roman", serif;
   --font-body-family: var(--font-body), system-ui, sans-serif;
+  --text-body: 0.9375rem;
+  --text-small: 0.8125rem;
+  --text-eyebrow: 0.75rem;
+  --text-button: 1rem;
+  --text-h1: clamp(2.25rem, 3.5vw, 3rem);
+  --text-h2: clamp(1.5rem, 2.4vw, 1.85rem);
+  --leading-body: 1.55;
+  --leading-heading: 1.1;
+  --weight-body: 400;
+  --weight-heading: 400;
+  --weight-strong: 500;
+  --tracking-eyebrow: 0.16em;
+  --tracking-button: 0.06em;
+  --radius-none: 0;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration: 0.28s;
 }
 
 html,
@@ -19,6 +35,9 @@ body {
   background: var(--brand-surface);
   color: var(--brand-ink);
   font-family: var(--font-body-family);
+  font-size: var(--text-body);
+  font-weight: var(--weight-body);
+  line-height: var(--leading-body);
 }
 
 h1,
@@ -26,7 +45,9 @@ h2,
 h3,
 .brand-heading {
   font-family: var(--font-heading-family);
-  font-weight: 500;
+  font-weight: var(--weight-heading);
+  letter-spacing: 0.01em;
+  line-height: var(--leading-heading);
 }
 
 * {
@@ -35,4 +56,14 @@ h3,
 
 a {
   color: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

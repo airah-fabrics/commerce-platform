@@ -1,20 +1,27 @@
 .row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  gap: 0.65rem;
 }
 
 .primary,
 .secondary {
-  min-height: 2.5rem;
-  padding: 0.65rem 1rem;
+  min-height: 2.75rem;
+  padding: 0.75rem 1.25rem;
   border: 1px solid var(--brand-ink);
+  border-radius: var(--radius-none);
   font-family: var(--font-body-family);
-  font-size: 0.75rem;
-  font-weight: 650;
-  letter-spacing: 0.08em;
+  font-size: var(--text-button);
+  font-weight: var(--weight-body);
+  letter-spacing: var(--tracking-button);
   text-transform: uppercase;
+  line-height: 1.3;
   cursor: pointer;
+  transition:
+    background-color var(--duration) var(--ease),
+    color var(--duration) var(--ease),
+    border-color var(--duration) var(--ease),
+    transform var(--duration) var(--ease);
 }
 
 .primary {
@@ -27,10 +34,23 @@
   color: var(--brand-ink);
 }
 
-.primary:hover,
-.secondary:hover,
+.primary:hover {
+  background: #222222;
+  border-color: #222222;
+}
+
+.secondary:hover {
+  background: var(--brand-ink);
+  color: var(--brand-bg);
+}
+
+.primary:active,
+.secondary:active {
+  transform: translateY(1px);
+}
+
 .primary:focus-visible,
 .secondary:focus-visible {
   outline: 2px solid var(--brand-ink);
-  outline-offset: 2px;
+  outline-offset: 3px;
 }

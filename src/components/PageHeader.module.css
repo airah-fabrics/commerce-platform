@@ -14,16 +14,19 @@
 .title {
   margin: 0;
   font-family: var(--font-heading-family);
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
-  font-weight: 500;
+  font-size: var(--text-h1);
+  font-weight: var(--weight-heading);
+  letter-spacing: 0.01em;
+  line-height: var(--leading-heading);
 }
 
 .description {
-  margin: 0.45rem 0 0;
+  margin: 0.55rem 0 0;
   max-width: 40rem;
   color: var(--brand-muted);
-  font-size: 0.95rem;
-  line-height: 1.5;
+  font-size: var(--text-body);
+  font-weight: var(--weight-body);
+  line-height: var(--leading-body);
 }
 
 .actions {
