@@ -1,11 +1,60 @@
 import type { Metadata } from "next";
+import { Newsreader, Red_Hat_Text } from "next/font/google";
 import { AppShell } from "@/components/AppShell";
-import { APP_TITLE } from "@/lib/config";
+import {
+  APP_DESCRIPTION,
+  APP_TITLE,
+  APP_TITLE_TEMPLATE,
+  STORE_BRAND,
+} from "@/lib/config";
 import "./globals.css";
 
+const heading = Newsreader({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-heading",
+  display: "swap",
+});
+
+const body = Red_Hat_Text({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-body",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: APP_TITLE,
-  description: "Private internal operations platform boilerplate",
+  title: {
+    default: APP_TITLE,
+    template: APP_TITLE_TEMPLATE,
+  },
+  description: APP_DESCRIPTION,
+  applicationName: STORE_BRAND,
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+  },
+  icons: {
+    icon: [
+      { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/favicon.png", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+  },
+  openGraph: {
+    title: APP_TITLE,
+    description: APP_DESCRIPTION,
+    siteName: STORE_BRAND,
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: APP_TITLE,
+    description: APP_DESCRIPTION,
+  },
 };
 
 export default function RootLayout({
@@ -14,7 +63,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${heading.variable} ${body.variable}`}>
       <body>
         <AppShell>{children}</AppShell>
       </body>
