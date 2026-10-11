@@ -37,15 +37,6 @@
   min-width: 0;
 }
 
-.brandMark {
-  width: 2rem;
-  height: 2rem;
-  object-fit: contain;
-  background: #fff;
-  border: 1px solid var(--line);
-  flex: 0 0 auto;
-}
-
 .brandName {
   margin: 0;
   font-family: var(--font-heading-family);
@@ -264,7 +255,7 @@
     justify-content: flex-end;
     min-height: 3.5rem;
     padding: 0 0.85rem;
-    border-bottom: 1px solid var(--line);
+    border-bottom: 0;
   }
 
   .brandRow {

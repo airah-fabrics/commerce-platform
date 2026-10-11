@@ -1,12 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useState } from "react";
 import { Icon } from "@/components/icons";
 import { Badge } from "@/components/ui/Badge";
-import { BRAND_MARK } from "@/lib/brand-assets";
 import { STORE_BRAND } from "@/lib/config";
 import { NAV_GROUPS } from "@/lib/nav";
 import styles from "./AppShell.module.css";
@@ -37,15 +35,6 @@ export function AppShell({ children }: { children: React.ReactNode }) {
     <div className={`${styles.shell} ${open ? styles.open : ""}`}>
       <header className={styles.topMobile}>
         <div className={styles.mobileTitle}>
-          {BRAND_MARK.show ? (
-            <Image
-              src={BRAND_MARK.src}
-              alt=""
-              width={BRAND_MARK.width}
-              height={BRAND_MARK.height}
-              className={styles.brandMark}
-            />
-          ) : null}
           <span>{STORE_BRAND}</span>
         </div>
         <button
@@ -68,16 +57,6 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       >
         <div className={styles.brand}>
           <div className={styles.brandRow}>
-            {BRAND_MARK.show ? (
-              <Image
-                src={BRAND_MARK.src}
-                alt=""
-                width={BRAND_MARK.width}
-                height={BRAND_MARK.height}
-                className={styles.brandMark}
-                priority
-              />
-            ) : null}
             <div className={styles.brandText}>
               <p className={styles.brandName}>{STORE_BRAND}</p>
               <p className={styles.brandProduct}>Operations</p>
