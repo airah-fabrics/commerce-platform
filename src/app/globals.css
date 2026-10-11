@@ -2,9 +2,10 @@
   --bg: #f4f4f5;
   --surface: #ffffff;
   --ink: #0a0a0a;
-  --muted: #71717a;
+  /* ~7:1 on white — usable for secondary UI text */
+  --muted: #52525b;
   --line: #e4e4e7;
-  --line-strong: #d4d4d8;
+  --line-strong: #a1a1aa;
   --sidebar: #ffffff;
   --sidebar-ink: #18181b;
   --accent: #0a0a0a;
@@ -13,6 +14,11 @@
   --warning: #b54708;
   --font-heading-family: var(--font-heading), "Times New Roman", serif;
   --font-body-family: var(--font-body), system-ui, sans-serif;
+  --text-body: 1rem;
+  --text-secondary: 0.9375rem;
+  --text-small: 0.875rem;
+  --text-label: 0.8125rem;
+  --leading-body: 1.55;
   --radius: 0;
   --radius-lg: 0;
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
@@ -28,9 +34,11 @@ body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--font-body-family);
-  font-size: 0.9375rem;
-  line-height: 1.5;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
   font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 * {
@@ -52,8 +60,9 @@ h3 {
   font-family: var(--font-heading-family);
   font-weight: 400;
   letter-spacing: 0.01em;
-  line-height: 1.15;
+  line-height: 1.2;
   margin: 0;
+  color: var(--ink);
 }
 
 @media (prefers-reduced-motion: reduce) {
