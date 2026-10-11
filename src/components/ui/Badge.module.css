@@ -1,0 +1,28 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.35rem;
+  height: 1.25rem;
+  padding: 0 0.4rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.neutral {
+  background: rgba(255, 255, 255, 0.14);
+  color: inherit;
+}
+
+.accent {
+  background: #ffffff;
+  color: #000000;
+}
+
+.warning {
+  background: #c4a574;
+  color: #000000;
+}

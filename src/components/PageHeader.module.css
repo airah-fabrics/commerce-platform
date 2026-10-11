@@ -1,0 +1,45 @@
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.copy {
+  min-width: min(100%, 36rem);
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-heading-family);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 500;
+}
+
+.info {
+  display: inline-flex;
+  color: var(--brand-muted);
+  cursor: help;
+}
+
+.description {
+  margin: 0.45rem 0 0;
+  max-width: 40rem;
+  color: var(--brand-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}

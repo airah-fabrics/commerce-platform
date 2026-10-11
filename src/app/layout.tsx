@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Newsreader, Red_Hat_Text } from "next/font/google";
 import { AppShell } from "@/components/AppShell";
+import { ToastProvider } from "@/components/ui/Toast";
 import {
   APP_DESCRIPTION,
   APP_TITLE,
@@ -65,7 +66,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${heading.variable} ${body.variable}`}>
       <body>
-        <AppShell>{children}</AppShell>
+        <ToastProvider>
+          <AppShell>{children}</AppShell>
+        </ToastProvider>
       </body>
     </html>
   );
