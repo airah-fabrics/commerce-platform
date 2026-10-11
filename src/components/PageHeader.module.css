@@ -11,23 +11,11 @@
   min-width: min(100%, 36rem);
 }
 
-.titleRow {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-}
-
 .title {
   margin: 0;
   font-family: var(--font-heading-family);
   font-size: clamp(1.8rem, 3vw, 2.4rem);
   font-weight: 500;
-}
-
-.info {
-  display: inline-flex;
-  color: var(--brand-muted);
-  cursor: help;
 }
 
 .description {

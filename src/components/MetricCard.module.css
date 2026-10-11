@@ -8,13 +8,6 @@
   flex-direction: column;
 }
 
-.top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-}
-
 .label {
   margin: 0;
   font-family: var(--font-body-family);
@@ -22,19 +15,6 @@
   font-weight: 650;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-}
-
-.hint {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.15rem;
-  height: 1.15rem;
-  border: 1px solid var(--brand-line);
-  color: var(--brand-muted);
-  font-size: 0.7rem;
-  font-weight: 700;
-  cursor: help;
 }
 
 .value {
