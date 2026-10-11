@@ -63,11 +63,12 @@
   display: none;
   align-items: center;
   justify-content: center;
-  width: 2.4rem;
-  height: 2.4rem;
-  border: 1px solid var(--line);
-  background: var(--surface);
-  color: inherit;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
   cursor: pointer;
   flex: 0 0 auto;
 }
@@ -186,10 +187,12 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.4rem;
-  height: 2.4rem;
-  border: 1px solid var(--line);
-  background: var(--surface);
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #000000;
   cursor: pointer;
   flex: 0 0 auto;
 }
