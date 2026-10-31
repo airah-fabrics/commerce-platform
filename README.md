@@ -1,11 +1,12 @@
 # airah-commerce-platform
 
-**PRIVATE INTERNAL SOFTWARE** — Airah Fabrics Operations Platform boilerplate.
+**Internal tool: the code is public, the data is not.** — Airah Fabrics Operations Platform boilerplate.
 
 ## Notices
 
 - No credentials belong in this repository.
-- Shopify, database, auth, and stock workers are **NOT CONNECTED**.
+- Every page needs a Google sign-in from an email in `ALLOWED_EMAILS` (set in Vercel, never in this repo).
+- Shopify, database, and stock workers are **NOT CONNECTED**.
 - Do not copy secrets or production data from other projects.
 - Shared commerce engine integration is deferred until after #28D production rollout review.
 
