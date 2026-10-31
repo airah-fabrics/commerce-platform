@@ -32,10 +32,11 @@
 
 .button {
   width: 100%;
-  min-height: 44px;
+  padding: 12px 16px;
   border: 0;
   background: var(--accent);
   color: var(--surface);
   font-weight: 600;
   cursor: pointer;
+  line-height: 20px;
 }
