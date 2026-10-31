@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Newsreader, Red_Hat_Text } from "next/font/google";
 import { AppShell } from "@/components/AppShell";
 import { ToastProvider } from "@/components/ui/Toast";
@@ -67,7 +68,9 @@ export default function RootLayout({
     <html lang="en" className={`${heading.variable} ${body.variable}`}>
       <body>
         <ToastProvider>
-          <AppShell>{children}</AppShell>
+          <Suspense fallback={null}>
+            <AppShell>{children}</AppShell>
+          </Suspense>
         </ToastProvider>
       </body>
     </html>
