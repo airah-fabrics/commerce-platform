@@ -1,0 +1,15 @@
+.button {
+  min-height: 44px;
+  padding: 0 16px;
+  border: 0;
+  background: var(--accent);
+  color: var(--surface);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media print {
+  .button {
+    display: none;
+  }
+}
