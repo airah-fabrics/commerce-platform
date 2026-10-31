@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { Newsreader, Red_Hat_Text } from "next/font/google";
 import { AppShell } from "@/components/AppShell";
+import { connectionStatus } from "@/lib/status";
 import { ToastProvider } from "@/components/ui/Toast";
 import {
   APP_DESCRIPTION,
@@ -69,7 +70,7 @@ export default function RootLayout({
       <body>
         <ToastProvider>
           <Suspense fallback={null}>
-            <AppShell>{children}</AppShell>
+            <AppShell connected={connectionStatus().shopify}>{children}</AppShell>
           </Suspense>
         </ToastProvider>
       </body>

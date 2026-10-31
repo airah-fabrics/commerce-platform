@@ -53,12 +53,21 @@
   margin: 0;
   font-size: 0.75rem;
   font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+}
+
+.label {
+  margin-bottom: 4px;
 }
 
 .meta {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 2px 16px;
+  grid-template-columns: auto auto;
+  align-content: start;
+  align-items: baseline;
+  justify-content: start;
+  gap: 8px 16px;
   margin: 0;
 }
 
@@ -82,12 +91,13 @@
   font-size: 0.75rem;
   text-align: left;
   white-space: nowrap;
+  vertical-align: middle;
 }
 
 .table td {
   padding: 8px;
   border-bottom: 1px solid #e4e4e7;
-  vertical-align: top;
+  vertical-align: middle;
 }
 
 .table .num {
@@ -98,6 +108,7 @@
 .totals {
   display: grid;
   grid-template-columns: 1fr auto;
+  align-items: baseline;
   gap: 8px 0;
   width: 100%;
   max-width: 340px;
@@ -170,4 +181,9 @@
   .parties {
     grid-template-columns: 1fr 1fr auto;
   }
+}
+
+.notes {
+  margin: 32px 0 0;
+  white-space: pre-line;
 }
